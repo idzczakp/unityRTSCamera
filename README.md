@@ -14,7 +14,7 @@ Create an empty object for a camera rig and set main camera as a child of the ri
 Adjust all the variables for your requirements and continue building your RTS Game!
 
 ## License 
-* see [LICENSE](https://github.com/username/sw-name/blob/master/LICENSE.md) file
+* see [LICENSE](https://github.com/idzczakp/unityRTSCamera/blob/master/LICENSE) file
 
 ## Version 
 * Version 1.0
