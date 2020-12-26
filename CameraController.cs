@@ -15,7 +15,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _camSpeedFast = 5f; //Speed of the camera while holding "Fast camera movement button"
 
     [SerializeField] private float _camMovementSpeed = 1f;
-    [SerializeField] private float _camMovementTime = 10f;
+    [SerializeField] private float _camSmoothness = 10f;
 
     [SerializeField] private float _camRotationAmount = 1f;
     [SerializeField] private float _camBorderMovement = 5f;
@@ -28,6 +28,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _minXCamMovement = 100f;
     [SerializeField] private float _maxXCamMovement = 900f;
 
+    [SerializeField] private bool cursorVisible = true;
+
     public Vector3 zoomAmount;
 
     public Vector3 newPosition;
@@ -37,6 +39,9 @@ public class CameraController : MonoBehaviour
     //MouseMovement
     public Vector3 rotateStartPosition;
     public Vector3 rotateCurrentPosition;
+
+    Vector2 pos1;
+    Vector2 pos2;
 
     // Start is called before the first frame update
     void Start()
@@ -61,32 +66,33 @@ public class CameraController : MonoBehaviour
 
             newZoom += Input.mouseScrollDelta.y * zoomAmount;
 
-            if (newZoom.y <= 30) //Max zoom limit
+            if (newZoom.y <= _maxCamZoom) //Max zoom limit
             {
-               newZoom = new Vector3(0, 30, -30);
+               newZoom = new Vector3(0, _maxCamZoom, -30);
 
-            } else if (newZoom.y >= 220) //Min zoom limit
+            } else if (newZoom.y >= _minCamZoom) //Min zoom limit
             {
-                newZoom = new Vector3(0, 120, -120);
+                newZoom = new Vector3(0, _minCamZoom, -120);
             }
 
         }
 
         //Camera rotating on mouse scroll button hold
 
+
         if (Input.GetMouseButtonDown(2))
         {
             rotateStartPosition = Input.mousePosition;
+        } 
+        else {
+            Cursor.lockState = CursorLockMode.None;
         }
         if (Input.GetMouseButton(2))
         {
-            rotateCurrentPosition = Input.mousePosition;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = cursorVisible;
 
-            Vector3 difference = rotateStartPosition - rotateCurrentPosition;
-
-            rotateStartPosition = rotateCurrentPosition;
-
-            newRotation *= Quaternion.Euler(Vector3.up * (-difference.x / 5));
+            newRotation *= Quaternion.Euler(Vector3.up * Input.GetAxis("Mouse X"));
         }
 
     }
@@ -180,8 +186,10 @@ public class CameraController : MonoBehaviour
         }
 
 
-        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * _camMovementTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * _camMovementTime);
-        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * _camMovementTime);
+        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * _camSmoothness);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * _camSmoothness);
+        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * _camSmoothness);
     }
+
+   
 }
