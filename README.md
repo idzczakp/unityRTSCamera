@@ -3,10 +3,10 @@ Unity RTSCamera
 **Unity RTSCamera** is a simple script handing the camera movement RTS style like.
 
 #### Screenshot
-![Screenshot RTSCamera](https://i.imgur.com/qE4gEdb.png "Screenshot RTSCamera")
+![Screenshot RTSCamera](https://i.imgur.com/4QEVNE5.png "Screenshot RTSCamera")
 
 ## Download
-* [Version 1.0](https://github.com/idzczakp/unityRTSCamera/archive/master.zip)
+* [Version 1.1](https://github.com/idzczakp/unityRTSCamera/archive/master.zip)
 
 ## Usage
 
@@ -17,7 +17,7 @@ Adjust all the variables for your requirements and continue building your RTS Ga
 * see [LICENSE](https://github.com/idzczakp/unityRTSCamera/blob/master/LICENSE) file
 
 ## Version 
-* Version 1.0
+* Version 1.1
 
 ## Contact
 #### Developer
