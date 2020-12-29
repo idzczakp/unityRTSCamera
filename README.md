@@ -9,7 +9,7 @@ Unity RTSCamera
 * [Version 1.1](https://github.com/idzczakp/unityRTSCamera/archive/master.zip)
 
 ## Usage
-![Screenshot RTSCamera](https://i.imgur.com/4QEVNE5.png "Screenshot RTSCamera")
+![Screenshot RTSCamera](https://i.imgur.com/qE4gEdb.png "Screenshot RTSCamera")
 Create an empty object for a camera rig and set main camera as a child of the rig. Attach CameraController.cs script to the camera rig and Main Camera to the Camera Transform.
 Adjust all the variables for your requirements and continue building your RTS Game!
 
