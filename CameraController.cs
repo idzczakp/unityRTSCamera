@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _camRotationAmount = 1f;
     [SerializeField] private float _camBorderMovement = 5f;
 
-    [SerializeField] private float _maxCamZoom = 10f;
+    [SerializeField] private float _maxCamZoom = 30f;
     [SerializeField] private float _minCamZoom = 100f;
 
     [SerializeField] private float _minZCamMovement = 100f;
@@ -68,11 +68,11 @@ public class CameraController : MonoBehaviour
 
             if (newZoom.y <= _maxCamZoom) //Max zoom limit
             {
-               newZoom = new Vector3(0, _maxCamZoom, -30);
+               newZoom = new Vector3(0, _maxCamZoom, -_maxCamZoom);
 
             } else if (newZoom.y >= _minCamZoom) //Min zoom limit
             {
-                newZoom = new Vector3(0, _minCamZoom, -120);
+                newZoom = new Vector3(0, _minCamZoom, -_minCamZoom);
             }
 
         }
