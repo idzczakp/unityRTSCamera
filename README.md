@@ -6,7 +6,7 @@ Unity RTSCamera
 ![Screenshot RTSCamera](https://i.imgur.com/4QEVNE5.png "Screenshot RTSCamera")
 
 ## Download
-* [Version 1.1](https://github.com/idzczakp/unityRTSCamera/archive/master.zip)
+* [Version 1.2](https://github.com/idzczakp/unityRTSCamera/archive/master.zip)
 
 ## Usage
 ![Screenshot RTSCamera](https://i.imgur.com/qE4gEdb.png "Screenshot RTSCamera")
@@ -17,7 +17,7 @@ Adjust all the variables for your requirements and continue building your RTS Ga
 * see [LICENSE](https://github.com/idzczakp/unityRTSCamera/blob/master/LICENSE) file
 
 ## Version 
-* Version 1.1
+* Version 1.2
 
 ## Contact
 #### Developer
